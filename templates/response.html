@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block mainBody %}
+<!--url,内容-->
+<h2>url:{{url}}</h2>
+<!--tag,内容-->
+<h3>tag:<br>
+    <ul>
+    {% for text in tagtext%}
+        <li>{{tag}}: {{text}}</li>
+    {% endfor%}
+    </ul>
+</h3>
+{{source}}
+<!--robots内容或者不存在-->
+{% endblock mainBody%}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SpiderTest</title>
+    </head>
+    <body>
+    <h1>welcome to spider the test</h1>
+
+    {% block mainBody %}
+    this is the a basic test----cat robots.txt and catch web page directly<br>
+    <!--输入并提交表单,进行一级检测，尝试提取页面内容-->
+    <h1>一级测试</h1>
+    <form action="test1" method="post">
+        网址:<input type="text" name="url"><br>
+        抓取目的标签:<input type="text" name="tag"><br>
+        <input type="submit" value="开始测试">
+    </form>
+    <!--对后面有可变参数的内容进行多次抓取,提取页面内容-->
+    <h1>二级测试</h1>
+    <form action="test2" method='post'>
+        网址:<input type="text" name="url"> <br>
+        cookie:<input type="text" name="cookie"><br>
+        抓取目的标签:<input type="text" name="tag"><br>
+        <input type="submit" value="开始测试">
+    </form>
+    {% endblock mainBody %}
+    </body>
+</html>
