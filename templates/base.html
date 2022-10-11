@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            body{background-image: url("../static/img/spider.jpg");
+                background-size:cover;
+                }
+            h3{color: rgb(1, 119, 8); font:24px "隶书";}
+            p,h1,i,b{color: rgb(154, 152, 154);}
+            form {
+                /* 居中表单 */
+                margin: 0 auto;
+                width: 400px;
+                /* 显示表单的轮廓 */
+                padding: 1em;
+                border: 1px solid #CCC;
+                border-radius: 1em;
+                }
+            div.relative {
+                position: relative;
+                left: 30px;
+                }
+        </style>
         <meta charset="utf-8">
         <title>SpiderTest</title>
     </head>
@@ -8,22 +28,28 @@
     <h1>welcome to spider the test</h1>
 
     {% block mainBody %}
-    this is the a basic test----cat robots.txt and catch web page directly<br>
+    <b>this is the a basic test----cat robots.txt and catch web page directly</b><br>
+    <i>ep:网址https://www.baidu.com -- 标签a</i>
     <!--输入并提交表单,进行一级检测，尝试提取页面内容-->
-    <h1>一级测试</h1>
-    <form action="test1" method="post">
+    <div>
+    <h1  style="font-family:arial;">一级测试</h1>
+    <form action="test1" method="post" style="color:#CCC ;height:100%;text-align:center">
         网址:<input type="text" name="url"><br>
+
         抓取目的标签:<input type="text" name="tag"><br>
         <input type="submit" value="开始测试">
     </form>
+    </div>
     <!--对后面有可变参数的内容进行多次抓取,提取页面内容-->
-    <h1>二级测试</h1>
-    <form action="test2" method='post'>
+    <div>
+    <h1 style="font-family:arial; ">二级测试</h1>
+    <form action="test2" method='post'  style="color:#CCC ;height:100%;text-align:center">
         网址:<input type="text" name="url"> <br>
         cookie:<input type="text" name="cookie"><br>
         抓取目的标签:<input type="text" name="tag"><br>
         <input type="submit" value="开始测试">
     </form>
+    </div>
     {% endblock mainBody %}
     </body>
 </html>
