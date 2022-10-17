@@ -6,6 +6,13 @@ import re
 import requests
 #creat my function to html page
 def test1(request):
+    '''
+    建议:字体加密
+        user-agent
+        cookie
+        动态加载
+        行为检测
+    '''
     method=request.method
     if method =='GET':
         return render(request,'base.html')
@@ -22,12 +29,14 @@ def test1(request):
                 for text in taglist:
                     tagtext=tagtext+text.get_text()
                 tagtext=[i for i in tagtext.split(' ') if len(i)>=2]
-                contents={'url':url,'tag':tag,'tagtext':tagtext}
+                contents={'url':url,'tag':tag,'tagtext':tagtext[:14]}
                 return render(request,'response.html',contents)
         else:
+            
             contents={'url':url,'tag':tag,'tagtext':'没有找到'}
             return render(request,'response.html',contents)
 def test2(request):
+    
     method=request.method
     if method =='GET':
         return render(request,'base.html')
@@ -49,7 +58,7 @@ def test2(request):
                 for text in taglist:
                     tagtext=tagtext+text.get_text()
                 tagtext=[i for i in tagtext.split(' ') if len(i)>=2]
-                contents={'url':url,'tag':tag,'tagtext':tagtext}
+                contents={'url':url,'tag':tag,'tagtext':tagtext[:14]}
                 return render(request,'response.html',contents)
         else:
             contents={'url':url,'tag':tag,'tagtext':'没有找到'}
